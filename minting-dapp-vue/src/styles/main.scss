@@ -196,6 +196,7 @@ button{
   font-family: "Headers";
   font-size: 3em;
   color: white;
+  line-height: 0.9;
   text-shadow: 0 2px rgba(0, 0, 0, .3);
   padding: 0;
   margin-bottom: .5em;
@@ -305,7 +306,6 @@ button{
   }
   #minting-dapp .collection-status .current-sale{
     font-size: 3.75em;
-    line-height: 0.9;
   }
   #minting-dapp .walletTop{
     margin-top: .5em;
