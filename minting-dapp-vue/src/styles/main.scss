@@ -1,0 +1,337 @@
+@import '~tailwindcss/base';
+@import '~tailwindcss/components';
+@import '~tailwindcss/utilities';
+
+@import './components/general.scss';
+@import './components/minting-dapp.scss';
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+@font-face {
+  font-family: "Headers";
+  src: url("../fonts/PICOBLA_.woff");
+}
+body{
+  font-family: 'Roboto', sans-serif!important;
+  font-size: 18px!important;
+  background-color: #65059B!important;
+  padding: 0!important;
+  /* background-image: url(../assets/bcg.png); */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.videoBg{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  object-fit: cover;
+  object-position: center;
+}
+h1, h2, h3, h4, h5, h6{
+  font-family: "Headers";
+}
+button{
+  font-family: "Headers";
+}
+.alert.alert-warning{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  border-radius: 0;
+  text-align: center;
+  z-index: 100;
+}
+#minting-dapp{
+  min-height: 100vh;
+  display: grid;
+  margin-top: 0;
+  gap: 0;
+  column-gap: 0;
+  max-width: 629px;
+  padding-top: 1.5em;
+}
+#minting-dapp .no-wallet{
+  background-color: transparent;
+  box-shadow: none;
+  justify-content: center;
+}
+#minting-dapp .walletTop{
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-top: 0;
+  margin-right: .5em;
+  transform: scale(.8);
+}
+#minting-dapp .walletTop .connectButton{
+  font-size: 1em;
+  transform: none;
+  width: 22px;
+  height: 19px;
+  background-image: url(../assets/icon_wallet.png);
+  background-size: 22px 19px;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  padding: 1em;
+  border: 3px solid white;
+  filter: drop-shadow(0 23px 23px rgba(0, 0, 0, .5));
+}
+.connectButton{
+  font-family: "Headers";
+  background-color: #1da0f2;
+  border: 0;
+  color: white;
+  font-size: 2em;
+  border-radius: .5em;
+  filter: drop-shadow(0 50px 23px rgba(0, 0, 0, .5));
+  transform: translateY(-20px);
+  transition: all .2s ease-in-out;
+  text-shadow: 0 2px rgba(0, 0, 0, .3);
+}
+.connectButton:hover, #minting-dapp .walletTop .connectButton:hover{
+  background-color: #1da0f2;
+  filter: drop-shadow(0 0px 0px rgba(0, 0, 0, .5));
+  transform: translateY(0px);
+  text-shadow: 0px 0px rgba(0, 0, 0, .3);
+}
+.containerMintStatus{
+  background-color: #1da0f27e;
+  border-radius: 2em;
+  display: flex;
+  flex-direction: column;
+  padding-top: .5em;
+  position: relative;
+  align-items: center;
+  align-self: center;
+  font-family: 'Roboto', sans-serif!important;
+  max-width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.socialLinks{
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-right: 50px;
+  margin-top: 0;
+  height: 45px;
+  transform: scale(.8);
+}
+.socialLinks ul{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: auto;
+  margin-top: auto;
+  border-radius: .5em;
+  background-color: #1da0f2;
+  width: auto;
+  padding-left:0;
+  padding: .3em;
+}
+.socialLinks ul li{
+  padding-left: .3em;
+  padding-right: .3em;
+  transition: opacity .2s;
+}
+.socialLinks ul li:hover{
+  opacity: .5;
+}
+
+/* COLLECTION STATUS */
+#minting-dapp .collection-status{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: .5em;
+  max-width: 95%;
+}
+#minting-dapp .collection-status, #minting-dapp .cannot-mint, #minting-dapp .not-mainnet, #minting-dapp .collection-sold-out{
+  background-color: transparent;
+  box-shadow: none;
+  font-family: 'Roboto', sans-serif!important;
+}
+#minting-dapp .cannot-mint{
+  color: white;
+}
+#minting-dapp .collection-status .user-address{
+  color: white;
+  grid-column: span 2/span 2;
+  border-bottom: 0;
+  padding: 0;
+  margin-bottom: .5em;
+  font-size: 1.2em!important;
+  padding-top: .5em;
+}
+.user-address .label{
+  color: white!important;
+  font-size: 2em!important;
+  line-height: 1em;
+  font-family: "Headers";
+  margin-bottom: .3em;
+}
+#minting-dapp .collection-status .supply{
+  grid-column: span 2 / span 2;
+  border-right: 0;
+  padding: 0;
+  margin: .75em auto .75em;
+  font-size: 3em;
+  color: white;
+  font-weight: 700;
+  display: block;
+  border: none;
+  text-align: center;
+}
+#minting-dapp .collection-status .current-sale{
+  grid-column: span 2 / span 2;
+  font-family: "Headers";
+  font-size: 3em;
+  color: white;
+  text-shadow: 0 2px rgba(0, 0, 0, .3);
+  padding: 0;
+  margin-bottom: .5em;
+  margin-top: .5em;
+  text-align: center;
+}
+#minting-dapp .collection-status .limit{
+  grid-column: span 2 / span 2;
+  color: #E78EFF;
+  padding: 0;
+  margin-bottom: .5em;
+}
+.mintableAmount{
+  font-family: 'Roboto', sans-serif;
+  padding: 0!important;
+  font-size: 1.5em;
+  color: #E78EFF;
+  grid-column: span 2 / span 2;
+}
+/* COLLECTION STATUS END */
+/* MINTING WIDGET */
+#minting-dapp .mint-widget{
+  width: 90%;
+  background-color: transparent;
+  box-shadow: none;
+  color: white;
+  overflow: visible;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#minting-dapp .mint-widget .price{
+  border: none;
+}
+#minting-dapp .mint-widget .controls{
+  border: 0;
+}
+#minting-dapp .mint-widget .controls .decrease{
+  background-color: white;
+  border: 0;
+  border-radius:.5em;
+  transition:filter .3s;
+}
+#minting-dapp .mint-widget .controls .increase{
+  background-color: #1da0f2;
+  border: 0;
+  border-radius:.5em;
+  transition:filter .3s;
+}
+#minting-dapp .mint-widget .controls .decrease:hover, #minting-dapp .mint-widget .controls .increase:hover{
+  filter: brightness(1.5);
+}
+#minting-dapp .mint-widget .controls .mint-amount{
+  border: 0;
+  color: white;
+  font-size: 2em;
+}
+#minting-dapp .mint-widget .mintButton{
+  font-family: "Headers";
+  font-size: 2.5em;
+  background-color: #1da0f2;
+  border: none;
+  border-radius: .5em;
+  margin-top: 1em;
+  color: white;
+  filter: drop-shadow(0 50px 23px rgba(0, 0, 0, .5));
+  transform: translateY(-20px);
+  text-shadow: 0 2px rgba(0, 0, 0, .3);
+  transition: all .2s ease-in-out;
+}
+#minting-dapp .mint-widget .mintButton:hover{
+  background-color: #1da0f2;
+  filter: drop-shadow(0 0px 0px rgba(0, 0, 0, .5));
+  transform: translateY(0px);
+  text-shadow: 0px 0px rgba(0, 0, 0, .3);
+  color: black;
+}
+#minting-dapp .mint-widget .increase:disabled,
+#minting-dapp .mint-widget .increase[disabled]{
+  background-color: gray;
+  color: white;
+  opacity: .8;
+}
+#minting-dapp .mint-widget .increase:disabled:hover,
+#minting-dapp .mint-widget .increase[disabled]:hover{
+  filter: drop-shadow(0 0px 0px rgba(0, 0, 0, .5));
+}
+#minting-dapp .mint-widget .mintButton:disabled,
+#minting-dapp .mint-widget .mintButton[disabled]{
+  background-color: gray;
+  color: white;
+  opacity: .8;
+}
+#minting-dapp .mint-widget .mintButton:disabled:hover,
+#minting-dapp .mint-widget .mintButton[disabled]:hover{
+  filter: drop-shadow(0 50px 23px rgba(0, 0, 0, .5));
+  transform: translateY(-20px);
+}
+/* MINTING WIDGET END */
+@media (min-width:1024px){
+  body{
+    font-size: 20px!important;
+  }
+  .containerMintStatus{
+    max-width: 100%;
+    padding: 4em 4.7em 4em 4em;
+  }
+  #minting-dapp .collection-status .current-sale{
+    font-size: 3.75em;
+  }
+  #minting-dapp .walletTop{
+    margin-top: .5em;
+    transform: scale(1);
+  }
+  .socialLinks{
+    margin-top: .5em;
+    transform: scale(1);
+    margin-right: 70px;
+  }
+}
+@media (max-width:350px){
+  body{
+    font-size: 14px!important;
+  }
+  .containerMintStatus{
+    padding-bottom: 0;
+  }
+  #minting-dapp .collection-status .supply{
+    margin: .5em;
+    text-align: center;
+  }
+  #minting-dapp .mint-widget .price{
+    padding-top: .3em;
+    padding-bottom: .3em;
+  }
+  #minting-dapp .mint-widget .mintButton{
+    padding: 0;
+  }
+}
