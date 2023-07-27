@@ -11,7 +11,7 @@
 
     <div className="current-sale">
       <!-- <span className="label">Sale status</span> -->
-      {{isSaleOpen ? (Web3.isWhitelistMintEnabled ? 'Boxbies Holders only' : 'Open') : 'Closed'}}
+      {{isSaleOpen ? (Web3.isWhitelistMintEnabled ? 'Whitelist Only' : 'Open') : 'Closed'}}
     </div>
   </div>
 </template>
