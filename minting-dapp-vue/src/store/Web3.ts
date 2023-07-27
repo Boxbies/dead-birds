@@ -116,21 +116,21 @@ export const useWeb3 = defineStore('Web3', {
         isPaused: await this.contract.read.paused([]),
         isWhitelistMintEnabled: await this.contract.read.whitelistMintEnabled([]),
         isUserInWhitelist: Whitelist.contains(this.userAddress ?? ''),
-        amountAllowed: Whitelist.getAmountAllowed(this.userAddress ?? ''),
+        amountAllowed: 1, /* Whitelist.getAmountAllowed(this.userAddress ?? ''), */
         alreadyMintedAmount: 0
       })
 
-      if (this.userAddress != null) {
+      /* if (this.userAddress != null) {
         this.updateUserInfo()
-      }
+      } */
 
       this.initDone = true
     },
-    async updateUserInfo () {
+    /* async updateUserInfo () {
       this.isUserInWhitelist = Whitelist.contains(this.userAddress ?? '')
-      this.amountAllowed = Whitelist.getAmountAllowed(this.userAddress ?? '')
+      this.amountAllowed = 1 Whitelist.getAmountAllowed(this.userAddress ?? '')
       this.alreadyMintedAmount = await this.contract.read.alreadyMinted([this.userAddress ?? ''])
-    },
+    }, */
     async registerWalletEvents () {
       ethereumClient.watchAccount(({ isConnected, address }) => {
         // console.log('ACCOUNT EVENT', isConnected, address)
